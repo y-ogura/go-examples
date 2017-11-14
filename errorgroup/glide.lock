@@ -1,0 +1,12 @@
+hash: 9185b67d787c6a3b67418d6068742012f33b1fae2f57712140c601d700995f2a
+updated: 2017-11-14T10:48:05.472398734+09:00
+imports:
+- name: golang.org/x/net
+  version: 054b33e6527139ad5b1ec2f6232c3b175bd9a30c
+  subpackages:
+  - context
+- name: golang.org/x/sync
+  version: 8e0aa688b654ef28caa72506fa5ec8dba9fc7690
+  subpackages:
+  - errgroup
+testImports: []
