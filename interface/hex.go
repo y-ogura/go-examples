@@ -2,8 +2,10 @@ package main
 
 import "fmt"
 
+// Hex intger type.
 type Hex int
 
-func (h Hex) String() {
-	return fmt.Sprintf("0x%x", int(h))
+// String string func.
+func (h Hex) String() string {
+	return fmt.Sprintf("%v", int(h))
 }
