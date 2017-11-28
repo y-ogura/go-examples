@@ -5,3 +5,5 @@ import:
   subpackages:
   - design
   - design/apidsl
+- package: github.com/tealeg/xlsx
+  version: ^1.0.3
