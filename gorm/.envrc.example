@@ -1,0 +1,2 @@
+export DATABASE_URL=postgres://username:pass@host:port/dbname
+export SSL_MODE="?sslmode=disable"
