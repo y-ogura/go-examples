@@ -1,0 +1,4 @@
+package: github.com/go-examples/sparkpost_sample
+import:
+- package: github.com/SparkPost/gosparkpost
+  version: ^0.1.0

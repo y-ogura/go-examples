@@ -1,0 +1,10 @@
+hash: 12115c87291d63cdd4a1e730139b9d74e283b6306d6829ef16fb5db9bc126c00
+updated: 2017-11-29T13:10:31.250767676+09:00
+imports:
+- name: github.com/pkg/errors
+  version: 248dadf4e9068a0b3e79f02ed0a610d935de5302
+- name: github.com/SparkPost/gosparkpost
+  version: 4c6d2a3be65810be883c869868a74e677df2881b
+  subpackages:
+  - events
+testImports: []

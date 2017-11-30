@@ -1,0 +1,7 @@
+# sparkpost
+export SPARKPOST_API_KEY="Your SparkPost API Key"
+export SPARKPOST_API_URL="https://api.sparkpost.com/api/v1"
+
+# mail_address
+export MAIL_ADDRESS="sample@sparkpostbox.com"
+
