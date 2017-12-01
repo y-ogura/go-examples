@@ -4,4 +4,4 @@ export SPARKPOST_API_URL="https://api.sparkpost.com/api/v1"
 
 # mail_address
 export MAIL_ADDRESS="sample@sparkpostbox.com"
-
+export MAIL_SEND_ADDRESS="from@sparkpostbox.com"

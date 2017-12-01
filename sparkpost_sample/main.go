@@ -29,12 +29,13 @@ func main() {
 	file, _ := os.Open("./tmp/sample.xlsx")
 	fileData, _ := ioutil.ReadAll(file)
 	emcExcel := base64.StdEncoding.EncodeToString(fileData)
+	from := os.Getenv("MAIL_SEND_ADDRESS")
 
 	tx := &sp.Transmission{
 		Recipients: []string{os.Getenv("MAIL_ADDRESS")},
 		Content: sp.Content{
 			HTML:    "<p>Hello</p>",
-			From:    "system@gstaff.co.jp",
+			From:    sp.From{Email: from, Name: "SCOREシステム"},
 			Subject: "test mail",
 			Attachments: []sp.Attachment{
 				sp.Attachment{
