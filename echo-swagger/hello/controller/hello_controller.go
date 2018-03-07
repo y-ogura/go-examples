@@ -1,0 +1,30 @@
+package controller
+
+import (
+	"net/http"
+
+	"github.com/labstack/echo"
+)
+
+// HelloController hello controller
+type HelloController struct{}
+
+// NewHelloController mount hello controller
+func NewHelloController(e *echo.Echo) {
+	handler := &HelloController{}
+
+	e.GET("/hello", handler.Hello)
+}
+
+// Hello hello world
+// @Title Hello
+// @Description Hello 'your name'
+// @Assept json
+// @Param name query string true "名前"
+// @Success 200 {object} string true "Hello World"
+// @Resource /hello
+// @Router /hello [get]
+func (c *HelloController) Hello(ctx echo.Context) error {
+	name := ctx.QueryParam("name")
+	return ctx.String(http.StatusOK, "Hello, "+name)
+}
