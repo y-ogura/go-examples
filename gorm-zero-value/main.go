@@ -22,6 +22,7 @@ func NewRepository(db *gorm.DB) Repository {
 // Repository repository interface
 type Repository interface {
 	Update(model interface{}, param map[string]interface{}) error
+	NullTimeUpdate(model *NullTime) error
 }
 
 // PointerTime struct
@@ -73,6 +74,14 @@ func main() {
 	param5 := map[string]interface{}{"id": 5, "join_date": PointerTime{Time: &now, Valid: true}}
 	r.Update(pointerTime, param5)
 
+	param6 := NullTime{
+		ID: 6,
+		JoinDate: pq.NullTime{
+			Valid: false,
+		},
+	}
+	r.NullTimeUpdate(&param6)
+
 	return
 }
 
@@ -91,6 +100,14 @@ func stubDB(dsn string) (*gorm.DB, sqlmock.Sqlmock) {
 
 func (m *repository) Update(model interface{}, param map[string]interface{}) error {
 	err := m.Conn.Model(model).Updates(param).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *repository) NullTimeUpdate(model *NullTime) error {
+	err := m.Conn.Model(model).Updates(model).Error
 	if err != nil {
 		return err
 	}
