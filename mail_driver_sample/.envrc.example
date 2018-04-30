@@ -1,0 +1,14 @@
+## mail driver
+export MAIL_DRIVER="smtp"
+export MAIL_SEND_ADDRESS=noreply@example.com
+
+## sparkpost
+export SPARKPOST_API_KEY="your api key"
+## sendgrid
+export SENDGRID_API_KEY="your api key"
+
+## smtp
+export MAIL_HOST="smtp.mailtrap.io"
+export MAIL_PORT=2525
+export MAIL_USERNAME="your user name"
+export MAIL_PASSWORD="your password"
